@@ -1,5 +1,5 @@
 const moment = require('moment-timezone')
-moment.tz.setDefault('Asia/Jakarta').locale('id')
+moment.tz.setDefault('Africa/Nairobi').locale('id')
 exports.run = {
    usage: ['groups'],
    category: 'miscs',
@@ -11,7 +11,7 @@ exports.run = {
       let groupList = async () => Object.entries(await client.groupFetchAllParticipating()).slice(0).map(entry => entry[1])
       let groups = await groupList()
       let rows = []
-      let caption = `乂  *G R O U P - L I S T*\n\n`
+      let caption = `👥  *G R O U P - L I S T*\n\n`
       caption += `*“Bot has joined into ${groups.length} groups, send _${isPrefix}gc_ or _${isPrefix}gcopt_ to show all setup options.”*\n\n`
       groups.map((x, i) => {
          let v = global.db.groups.find(v => v.jid == x.id)
