@@ -7,13 +7,13 @@ exports.run = {
       Func
    }) => {
       client.sendContact(m.chat, [{
-         name: env.owner_name,
+         name: 'ALFA',
          number: env.owner,
          about: 'Owner & Creator'
       }], m, {
-         org: 'Neoxr Network',
-         website: 'https://api.neoxr.my.id',
-         email: 'contact@neoxr.my.id'
+         org: 'ALFATECH MANAGEMENT',
+         website: 'https://alfatech.co.ke',
+         email: 'mwangialfa9@gmail.com / info@alfatech.co.ke'
       })
    },
    error: false,
