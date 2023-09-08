@@ -1,5 +1,5 @@
 const moment = require('moment-timezone')
-moment.tz.setDefault('Asia/Jakarta').locale('id')
+moment.tz.setDefault('Africa/Nairobi').locale('id')
 exports.run = {
    usage: ['hitstat', 'hitdaily'],
    category: 'miscs',
@@ -22,7 +22,7 @@ exports.run = {
       let sorted = command == 'hitstat' ? Object.entries(types).sort((a, b) => b[1].hitstat - a[1].hitstat) : Object.entries(types).sort((a, b) => b[1].today - a[1].today)
       let prepare = sorted.map(v => v[0])
       let show = Math.min(10, prepare.length)
-      let teks = `乂  *H I T S T A T*\n\n`
+      let teks = `★  *H I T S T A T*\n\n`
       teks += Func.texted('bold', `“Total command hit statistics ${command == 'hitstat' ? 'are currently' : 'for today'} ${Func.formatNumber(command == 'hitstat' ? sum.total('hitstat') : sum.total('today'))} hits.”`) + '\n\n'
       teks += sorted.slice(0, show).map(([cmd, prop], i) => (i + 1) + '. ' + Func.texted('bold', 'Command') + ' :  ' + Func.texted('monospace', isPrefix + cmd) + '\n    ' + Func.texted('bold', 'Hit') + ' : ' + Func.formatNumber(command == 'hitstat' ? prop.hitstat : prop.today) + 'x\n    ' + Func.texted('bold', 'Last Hit') + ' : ' + moment(prop.lasthit).format('DD/MM/YY HH:mm:ss')).join`\n`
       teks += `\n\n${global.footer}`
