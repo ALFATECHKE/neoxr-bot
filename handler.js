@@ -69,7 +69,7 @@ module.exports = async (client, ctx) => {
          Object.entries(global.db.statistic).map(([_, prop]) => prop.today = 0)
       }, {
          scheduled: true,
-         timezone: 'Asia/Jakarta'
+         timezone: 'Africa/Nairobi'
       })
       if (m.isGroup && !m.fromMe) {
          let now = new Date() * 1
@@ -124,7 +124,7 @@ module.exports = async (client, ctx) => {
                continue
             }
             if (cmd.restrict && !isPrem && !isOwner && text && new RegExp('\\b' + setting.toxic.join('\\b|\\b') + '\\b').test(text.toLowerCase())) {
-               client.reply(m.chat, `⚠️ You violated the *Terms & Conditions* of using bots by using blacklisted keywords, as a penalty for your violation being blocked and banned.`, m).then(() => {
+               client.reply(m.chat, `⚠️ You violated the *Terms & Conditions* of using bots by using blacklisted keywords, as a penalty for your violation you'll be blocked and banned.Contact owner for support.`, m).then(() => {
                   users.banned = true
                   client.updateBlockStatus(m.sender, 'block')
                })
