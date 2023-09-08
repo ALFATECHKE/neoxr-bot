@@ -73,7 +73,7 @@ const statistic = (Func, stats, system) => {
 
 ${global.footer}`
    } else {
-      return `乂  *B O T S T A T*
+      return `★  *B O T S T A T*
 
 	◦  ${Func.texted('bold', Func.formatNumber(stats.groups))} Groups Joined
 	◦  ${Func.texted('bold', Func.formatNumber(stats.chats))} Personal Chats
@@ -84,7 +84,7 @@ ${global.footer}`
 	◦  ${Func.texted('bold', Func.formatNumber(stats.hitstat))} Commands Hit
 	◦  Runtime : ${Func.texted('bold', stats.uptime)}
 
-乂  *S Y S T E M*
+★  *S Y S T E M*
 
 	◦  ${Func.texted('bold', system.autodownload ? '[ √ ]' : '[ × ]')}  Auto Download
 	◦  ${Func.texted('bold', system.debug ? '[ √ ]' : '[ × ]')}  Debug Mode
