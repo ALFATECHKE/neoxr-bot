@@ -18,12 +18,12 @@ exports.run = {
          let now = new Date() * 1
          let lastseen = (user.lastseen == 0) ? 'Never' : Func.toDate(now - user.lastseen)
          let usebot = (user.usebot == 0) ? 'Never' : Func.toDate(now - user.usebot)
-         let caption = `乂  *U S E R - P R O F I L E*\n\n`
+         let caption = `★  *U S E R - P R O F I L E*\n\n`
          caption += `	◦  *Name* : ${m.pushName}\n`
          caption += `	◦  *Limit* : ${Func.formatNumber(user.limit)}\n`
          caption += `	◦  *Hitstat* : ${Func.formatNumber(user.hit)}\n`
          caption += `	◦  *Warning* : ${((m.isGroup) ? (typeof global.db.groups.find(v => v.jid == m.chat).member[m.sender] != 'undefined' ? global.db.groups.find(v => v.jid == m.chat).member[m.sender].warning : 0) + ' / 5' : user.warning + ' / 5')}\n\n`
-         caption += `乂  *U S E R - S T A T U S*\n\n`
+         caption += `★  *U S E R - S T A T U S*\n\n`
          caption += `	◦  *Blocked* : ${(blocked ? '√' : '×')}\n`
          caption += `	◦  *Banned* : ${(new Date - user.banTemp < env.timer) ? Func.toTime(new Date(user.banTemp + env.timeout) - new Date()) + ' (' + ((env.timeout / 1000) / 60) + ' min)' : user.banned ? '√' : '×'}\n`
          caption += `	◦  *Use In Private* : ${(global.db.chats.map(v => v.jid).includes(m.sender) ? '√' : '×')}\n`
