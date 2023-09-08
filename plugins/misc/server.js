@@ -11,7 +11,7 @@ exports.run = {
          const json = await Func.fetchJson('http://ip-api.com/json')
          delete json.status
          delete json.query
-         let caption = `乂  *S E R V E R*\n\n`
+         let caption = `★  *S E R V E R*\n\n`
          caption += `┌  ◦  OS : ${os.type()} (${os.arch()} / ${os.release()})\n`
          caption += `│  ◦  Ram : ${Func.formatSize(process.memoryUsage().rss)} / ${Func.formatSize(os.totalmem())}\n`
          for (let key in json) caption += `│  ◦  ${Func.ucword(key)} : ${json[key]}\n`
